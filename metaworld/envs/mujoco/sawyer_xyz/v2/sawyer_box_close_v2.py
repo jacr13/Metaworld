@@ -43,10 +43,12 @@ class SawyerBoxCloseEnvV2(SawyerXYZEnv):
         self.goal_space = Box(
             np.array(goal_low, dtype=np.float64),
             np.array(goal_high, dtype=np.float64),
+            dtype=np.float64,
         )
         self._random_reset_space = Box(
             np.hstack((obj_low, goal_low)),
             np.hstack((obj_high, goal_high)),
+            dtype=np.float64,
         )
 
         self.init_obj_quat = None

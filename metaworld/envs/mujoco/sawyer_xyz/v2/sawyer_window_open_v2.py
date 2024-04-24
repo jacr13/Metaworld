@@ -59,10 +59,12 @@ class SawyerWindowOpenEnvV2(SawyerXYZEnv):
         self._random_reset_space = Box(
             np.array(obj_low, dtype=np.float64),
             np.array(obj_high, dtype=np.float64),
+            dtype=np.float64,
         )
         self.goal_space = Box(
             np.array(goal_low, dtype=np.float64),
             np.array(goal_high, dtype=np.float64),
+            dtype=np.float64,
         )
 
         self.maxPullDist = 0.2

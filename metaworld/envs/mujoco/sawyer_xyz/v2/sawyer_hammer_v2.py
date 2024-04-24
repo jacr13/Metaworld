@@ -40,10 +40,15 @@ class SawyerHammerEnvV2(SawyerXYZEnv):
         self.hand_init_pos = self.init_config["hand_init_pos"]
         self.nail_init_pos = None
 
-        self._random_reset_space = Box(np.array(obj_low), np.array(obj_high))
+        self._random_reset_space = Box(
+            np.array(obj_low, dtype=np.float64),
+            np.array(obj_high, dtype=np.float64),
+            dtype=np.float64,
+        )
         self.goal_space = Box(
             np.array(goal_low, dtype=np.float64),
             np.array(goal_high, dtype=np.float64),
+            dtype=np.float64,
         )
 
     @property
